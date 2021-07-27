@@ -19,13 +19,13 @@ def index(request):
     else:
         form = ContactForm()
     context = {
-        'title':    'AbledTaha.us.to | Home',
+        'title':    'AbledTaha | Home',
         'form':     form
     }
     return render(request, "index.html", context)
 
 def generic(request):
     context = {
-        'title':    'AbledTaha.us.to | Generic'
+        'title':    'AbledTaha | Generic'
     }
     return render(request, "generic.html", context)
