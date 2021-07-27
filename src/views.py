@@ -2,6 +2,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from .forms import ContactForm
 from datetime import datetime
+from . import emailSender
 
 def index(request):
     if request.method == "POST":
@@ -11,8 +12,9 @@ def index(request):
             email = form.cleaned_data['email']
             subject = form.cleaned_data['subject']
             time = datetime.now()
-            with open("contacts.txt", "a+") as File:
-                File.write(f"{email}\n{subject}\n{time}\n\n")
+            message_text = f'Someone wants to contact you. \n Email: {email} \n Subject: {subject} \n Time: {time}'
+            emailSender.send(message_text)
+            
 
     else:
         form = ContactForm()
