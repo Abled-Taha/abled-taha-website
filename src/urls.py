@@ -20,7 +20,7 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='home'),
-    path('generic/', views.generic, name='generic')
+    path('secret/', views.secret, name='secret')
 ]
 
 handler404 = views.error

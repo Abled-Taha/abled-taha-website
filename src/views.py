@@ -29,8 +29,8 @@ def index(request):
     }
     return render(request, "index.html", context)
 
-def generic(request):
+def secret(request):
     context = {
         'title':    'AbledTaha | Generic'
     }
-    return render(request, "generic.html", context)
+    return render(request, "secret.html", context)
