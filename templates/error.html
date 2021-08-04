@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block head %}
+            <link href="https://fonts.googleapis.com/css?family=Montserrat:700,900" rel="stylesheet">
+            <link type="text/css" rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+            <link type="text/css" rel="stylesheet" href="{% static 'assets/css/error.css' %}" />
+        {% endblock head %}
+    </head>
+
+    <body>
+        {% block content %}
+            <div id="notfound">
+                <div class="notfound-bg"></div>
+                <div class="notfound">
+                    <div class="notfound-404">
+                        <h1>404</h1>
+                    </div>
+                    <h2>I am Sorry, but the page or file you requested was not found !</h2>
+                    <p>Either the file was removed or you mis-spelled something in the url
+                    or it did not even existed in the first place.</p>
+                    <a href="/" class="home-btn">Go Home</a>
+                    <a href="/#cta" class="contact-btn">Contact Me</a>
+                    <br>
+                    <br>
+                    <ul class="icons">
+                        <li><a target=_blank href="https://twitter.com/AbledTaha" class="icon brands fa-twitter alt"><span class="label">Twitter</span></a></li>
+                        <li><a target=_blank href="https://www.facebook.com/TahaRizwan03" class="icon brands fa-facebook-f alt"><span class="label">Facebook</span></a></li>
+                        <li><a target=_blank href="https://www.instagram.com/abled_taha" class="icon brands fa-instagram alt"><span class="label">Instagram</span></a></li>
+                        <li><a target=_blank href="https://github.com/Abled-Taha" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
+                        <li><a target=_blank href="https://www.youtube.com/channel/UCSvyTai0BVGgaM7hjsfNT5Q" class="icon brands fa-youtube alt"><span class="label">YouTube</span></a></li>
+                        <li><a target=_blank href="https://www.reddit.com/user/Abled_Gaming1357" class="icon brands fa-reddit alt"><span class="label">Reddit</span></a></li>
+                        <li><a target=_blank href="https://stackoverflow.com/users/13909069/ableds-gaming" class="icon brands fa-stack-overflow alt"><span class="label">StackOverFlow</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        {% endblock content %}
+    </body>
+</html>

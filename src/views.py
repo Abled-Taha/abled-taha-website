@@ -1,8 +1,13 @@
-from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from .forms import ContactForm
 from datetime import datetime
 from . import emailSender
+
+def error(request, exception):
+    context = {
+        "title" :       "Error - 404 | Page Not Found"
+    }
+    return render(request, "error.html", context)
 
 def index(request):
     if request.method == "POST":

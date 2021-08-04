@@ -22,3 +22,5 @@ urlpatterns = [
     path('', views.index, name='home'),
     path('generic/', views.generic, name='generic')
 ]
+
+handler404 = views.error
