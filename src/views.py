@@ -1,7 +1,5 @@
 from django.shortcuts import render
 from .forms import ContactForm
-from datetime import datetime
-from . import emailSender
 import requests
 
 def error(request, exception):
