@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .forms import ContactForm
 from datetime import datetime
 from . import emailSender
+import requests
 
 def error(request, exception):
     context = {
@@ -16,10 +17,7 @@ def index(request):
         if form.is_valid():
             email = form.cleaned_data['email']
             subject = form.cleaned_data['subject']
-            time = datetime.now()
-            message_text = f'Someone wants to contact you. \n Email: {email} \n Subject: {subject} \n Time: {time}'
-            emailSender.send(message_text)
-            
+            r = requests.get(f"https://contact-me-api-python.herokuapp.com/create/{email}/{subject}")
 
     else:
         form = ContactForm()
