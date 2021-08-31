@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+		{% block head %}
+			<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+		{% endblock head %}
+	</head>
+
+	<body class="is-preload">
+		{% block content %}
+			<!-- Wrapper -->
+				<div id="wrapper">
+
+					<!-- Header -->
+						<header id="header">
+							<h1>Done!</h1>
+							<p>Done! Your Contact details have been saved to my database, I will soon contact you.</p>
+						</header>
+				</div>
+		{% endblock content %}
+	</body>
+</html>

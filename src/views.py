@@ -16,6 +16,10 @@ def index(request):
             email = form.cleaned_data['email']
             subject = form.cleaned_data['subject']
             r = requests.get(f"https://contact-me-api-python.herokuapp.com/225338242/create/{email}/{subject}")
+            context = {
+                'title' : 'AbledTaha | Done'
+            }
+            return render(request, 'done.html', context)
 
     else:
         form = ContactForm()
