@@ -27,6 +27,6 @@ def index(request):
 
 def secret(request):
     context = {
-        'title':    'AbledTaha | Generic'
+        'title':    'AbledTaha | Secret'
     }
     return render(request, "secret.html", context)
