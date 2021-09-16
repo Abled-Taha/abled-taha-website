@@ -6,6 +6,7 @@
 	<head>
 		{% block head %}
 			<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+			<noscript><link rel="stylesheet" href="{% static 'assets/css/noscript.css' %}" /></noscript>
 		{% endblock head %}
 	</head>
 
@@ -15,10 +16,65 @@
 				<div id="wrapper">
 
 					<!-- Header -->
-						<header id="header">
-							<h1>Done!</h1>
-							<p>Done! Your Contact details have been saved to my database, I will soon contact you.</p>
+						<header id="header" class="alt">
+							<span class="logo"><img src="{% static 'images/logo.png' %}" alt="" /></span>
+							<h1><span style="color: black; font-weight: bold;">&lt;</span>Abled-Taha<span style="color: black; font-weight: bold;">\&gt;</span></h1>
+							<p>Eat, Code, Game, Sleep, Repeat!<br />
+							built by <a href="https://twitter.com/AbledTaha" target="_blank">@AbledTaha</a></p>
 						</header>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="#intro" class="active">Introduction</a></li>
+								<li><a href="#cta">Done</a></li>
+							</ul>
+						</nav>
+
+					<!-- Main -->
+						<div id="main">
+
+							<!-- Introduction -->
+								<section id="intro" class="main">
+									<div class="spotlight">
+										<div class="content">
+											<header class="major">
+												<h2>Introduction</h2>
+											</header>
+											<p>I am a 17 years old programmer, living in Karachi, Pakistan.
+											I love to program and game. In programming, I love to make bots for
+											automating things, work on freelancing projects, contributing in
+											open source projects. And in gaming, I am more into fast-paced FPS games
+											and board games.</p>
+											<p>(This picture of me is quite old, I will update it soon.)</p>
+										</div>
+										<span class="image"><img src="{% static 'images/me.jpg' %}" alt="" /></span>
+									</div>
+								</section>
+							<!-- Get Started -->
+								<section id="cta" class="main special">
+									<header class="major">
+										<h2>Done</h2>
+										<p>Your contact details have been successfully saved to my database, I will
+										soon contact you.</p>
+									</header>
+								</section>
+						</div>
+						<footer id="footer">
+							<section>
+								<ul class="icons">
+									<li><a target=_blank href="https://twitter.com/AbledTaha" class="icon brands fa-twitter alt"><span class="label">Twitter</span></a></li>
+									<li><a target=_blank href="https://www.facebook.com/TahaRizwan03" class="icon brands fa-facebook-f alt"><span class="label">Facebook</span></a></li>
+									<li><a target=_blank href="https://www.instagram.com/abled_taha" class="icon brands fa-instagram alt"><span class="label">Instagram</span></a></li>
+									<li><a target=_blank href="https://github.com/Abled-Taha" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
+									<li><a target=_blank href="https://www.youtube.com/channel/UCSvyTai0BVGgaM7hjsfNT5Q" class="icon brands fa-youtube alt"><span class="label">YouTube</span></a></li>
+									<li><a target=_blank href="https://www.reddit.com/user/Abled_Gaming1357" class="icon brands fa-reddit alt"><span class="label">Reddit</span></a></li>
+									<li><a target=_blank href="https://stackoverflow.com/users/13909069/ableds-gaming" class="icon brands fa-stack-overflow alt"><span class="label">StackOverFlow</span></a></li>
+								</ul>
+							</section>
+							<p class="copyright">&copy; Abled-Taha</p>
+						</footer>
+
 				</div>
 		{% endblock content %}
 	</body>
