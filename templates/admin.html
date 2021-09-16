@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+		{% block head %}
+			<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+			<noscript><link rel="stylesheet" href="{% static 'assets/css/noscript.css' %}" /></noscript>
+		{% endblock head %}
+	</head>
+
+	<body class="is-preload">
+		{% block content %}
+			<!-- Wrapper -->
+				<div id="wrapper">
+
+					<!-- Header -->
+						<header id="header">
+							<h1>Entries!</h1>
+						</header>
+
+					<!-- Main -->
+						<div id="main">
+							<!-- Content -->
+							<section id="content" class="main">
+								{% for key, value in people.items %}
+                                    <ul>
+                                    {% for 2key, 2value in value.items %}
+                                        <li>{{2key}} : {{2value}}</li>
+                                    {% endfor %}
+                                    </ul>
+                                    <br>
+                                {% endfor %}
+							</section>
+						</div>
+		{% endblock content %}
+	</body>
+</html>

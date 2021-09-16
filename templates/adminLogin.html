@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+		{% block head %}
+			<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+			<noscript><link rel="stylesheet" href="{% static 'assets/css/noscript.css' %}" /></noscript>
+		{% endblock head %}
+	</head>
+
+	<body class="is-preload">
+		{% block content %}
+			<!-- Wrapper -->
+				<div id="wrapper">
+
+					<!-- Header -->
+						<header id="header">
+							<h1>Admin Login!</h1>
+							<p>Admin! You need to login.</p>
+						</header>
+
+					<!-- Main -->
+						<div id="main">
+							<!-- Content -->
+							<section id="content" class="main">
+								<form action="" method="post">
+                                {% csrf_token %}
+                                {{ form }}
+                                <br>
+                                <input class="button primary" type="submit" value="Submit">
+                                </form>
+							</section>
+						</div>
+				</div>
+		{% endblock content %}
+	</body>
+</html>

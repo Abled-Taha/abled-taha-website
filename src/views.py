@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .forms import ContactForm
+from .forms import ContactForm, AdminLoginForm
 import requests
 
 def error(request, exception):
@@ -34,3 +34,33 @@ def secret(request):
         'title':    'AbledTaha | Secret'
     }
     return render(request, "secret.html", context)
+
+def validateAdminLogin(username, password):
+    if username == 'abled' and password == 'QEu4AuMkg#w%#UUs':
+        return True
+    else:
+        return False
+
+def adminLogin(request):
+    if request.method == "POST":
+        form = AdminLoginForm(request.POST)
+
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            isDone = validateAdminLogin(username, password)
+            if isDone:
+                requestInfo = requests.get('https://contact-me-api-python.herokuapp.com/225338242/find').json()
+                context = {
+                    'title':    'AbledTaha | Admin',
+                    'people':   requestInfo
+                }
+                return render(request, "admin.html", context)
+
+    else:
+        form = AdminLoginForm()
+    context = {
+        'title':    'AbledTaha | Admin Login',
+        'form' :    form
+    }
+    return render(request, "adminLogin.html", context)
