@@ -27,6 +27,9 @@
 								{% for key, value in people.items %}
                                     <ul>
                                     {% for 2key, 2value in value.items %}
+										{% if 2key == 'email' %}
+										<a href="https://contact-me-api-python.herokuapp.com/225338242/delete/{{2value}}">Delete</a>
+										{% endif %}
                                         <li>{{2key}} : {{2value}}</li>
                                     {% endfor %}
                                     </ul>
