@@ -15,7 +15,7 @@ def index(request):
         if form.is_valid():
             email = form.cleaned_data['email']
             subject = form.cleaned_data['subject']
-            r = requests.get(f"https://contact-me-api-python.herokuapp.com/225338242/create/{email}/{subject}")
+            r = requests.get(f"http://127.0.0.1:5000/225338242/create/{email}/{subject}")
             context = {
                 'title' : 'AbledTaha | Done'
             }
@@ -36,7 +36,7 @@ def secret(request):
     return render(request, "secret.html", context)
 
 def validateAdminLogin(username, password):
-    if username == 'abled' and password == 'QEu4AuMkg#w%#UUs':
+    if username == 'admin' and password == 'admin':
         return True
     else:
         return False
@@ -50,7 +50,7 @@ def adminLogin(request):
             password = form.cleaned_data['password']
             isDone = validateAdminLogin(username, password)
             if isDone:
-                requestInfo = requests.get('https://contact-me-api-python.herokuapp.com/225338242/find').json()
+                requestInfo = requests.get('http://127.0.0.1:5000/225338242/find').json()
                 context = {
                     'title':    'AbledTaha | Admin',
                     'people':   requestInfo
